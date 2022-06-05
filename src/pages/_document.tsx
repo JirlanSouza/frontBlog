@@ -1,4 +1,4 @@
-import Document, { Head, Html } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
   render(): JSX.Element {
@@ -12,6 +12,10 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
       </Html>
     );
   }
