@@ -1,1 +1,57 @@
-// TODO
+.container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 4rem;
+}
+
+.logo {
+  margin-top: 5rem;
+  margin-bottom: 4rem;
+}
+
+.posts {
+  list-style: none;
+  color: var(--body);
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 1.8rem;
+    letter-spacing: -0.5px;
+    color: var(--heading);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  div {
+    display: flex;
+
+    span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      padding-left: 0.7rem;
+    }
+
+    div+div {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+.paginatorButton {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

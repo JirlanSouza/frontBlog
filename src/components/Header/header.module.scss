@@ -1,16 +1,14 @@
 .header {
   display: flex;
   justify-content: center;
-  background: var(--background);
-}
 
-.container {
-  display: flex;
-  align-items: center;
-  height: 105px;
-  width: 720px;
+  div {
+    display: flex;
+    align-items: center;
+    height: 105px;
 
-  img {
-    cursor: pointer;
+    img {
+      cursor: pointer;
+    }
   }
 }
