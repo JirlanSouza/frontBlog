@@ -1,5 +1,3 @@
-
-
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { GetStaticPropsContext } from 'next';
 import { ParsedUrlQuery } from 'querystring';
@@ -135,14 +133,14 @@ describe('Home', () => {
 
     screen.getByText('Como utilizar Hooks');
     screen.getByText('Pensando em sincronização em vez de ciclos de vida');
-    screen.getByText('15 mar 2021');
+    screen.getByText('15 Mar 2021');
     screen.getByText('Joseph Oliveira');
 
     screen.getByText('Criando um app CRA do zero');
     screen.getByText(
       'Tudo sobre como criar a sua primeira aplicação utilizando Create React App'
     );
-    screen.getByText('15 mar 2021');
+    screen.getByText('15 Mar 2021');
     screen.getByText('Danilo Vieira');
   });
 
