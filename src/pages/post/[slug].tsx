@@ -37,38 +37,57 @@ export default function Post({ post }: PostProps): JSX.Element {
   if (router.isFallback) {
     return <div>Carregando...</div>;
   }
+
+  function calcTimeRead(): number {
+    const wordsAmount = post.data.content.reduce((acc, content) => {
+      const contentWords = content.body.reduce((accBody, body) => {
+        const bodyWords = body.text.split(' ');
+
+        return accBody + bodyWords.length;
+      }, 0);
+
+      return acc + contentWords;
+    }, 0);
+
+    const readTime = Math.ceil(wordsAmount / 200);
+
+    return readTime;
+  }
+
   return (
     <>
       <Header />
-      <main>
-        <h2>{post.data.title}</h2>
-        <div>
-          <div>
-            <FiCalendar />
-            <span>
-              {format(new Date(post.first_publication_date), 'dd MMM yyyy')}
-            </span>
-          </div>
-          <div>
-            <FiUser />
-            <span>{post.data.author}</span>
-          </div>
-          <div>
-            <FiClock />
-            <span>4 min</span>
-          </div>
-        </div>
-
-        {post.data.content.map(content => {
-          return (
-            <div key={content.heading}>
-              <h4>{content.heading}</h4>
-              {content.body.map(body => {
-                return <p key={content.heading}>{body.text}</p>;
-              })}
+      <main className={styles.container}>
+        <div className={commonStyles.container}>
+          <h2 className={styles.title}>{post.data.title}</h2>
+          <div className={styles.info}>
+            <div>
+              <FiCalendar />
+              <span>
+                {format(new Date(post.first_publication_date), 'dd MMM yyyy')}
+              </span>
             </div>
-          );
-        })}
+            <div>
+              <FiUser />
+              <span>{post.data.author}</span>
+            </div>
+            <div>
+              <FiClock />
+              <span>{calcTimeRead()} min</span>
+            </div>
+          </div>
+
+          {post.data.content.map(content => {
+            return (
+              <article key={content.heading} className={styles.content}>
+                <h4>{content.heading}</h4>
+                {content.body.map(body => {
+                  return <p key={body.text.length}>{body.text}</p>;
+                })}
+              </article>
+            );
+          })}
+        </div>
       </main>
     </>
   );

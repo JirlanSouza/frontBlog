@@ -1,1 +1,49 @@
-// TODO
+.container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.5;
+  color: var(--heading);
+  margin-bottom: 1rem;
+}
+
+.info {
+  display: flex;
+  color: var(--body);
+  margin-bottom: 3rem;
+
+  span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding-left: 0.7rem;
+  }
+
+  div+div {
+    margin-left: 1.5rem;
+  }
+}
+
+.content {
+  color: var(--body);
+
+  h4 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.15rem;
+    line-height: 140%;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: var(--primary);
+  }
+}
